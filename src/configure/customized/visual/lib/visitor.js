@@ -27,7 +27,7 @@ function addElesListener (e) {
 
   // var elePath = domParentList(ele)
   // var eleIndex = setIndex(ele, elePath)
-  var patt = /\d{13}/g;
+  var patt = /\d{13}/g
   if (patt.test(elePath) === true) {
     elePath = elePath.replace(patt, '')
   }
@@ -152,7 +152,7 @@ function pcMouseOver (e) {
   var ele = e.target
 
   elePath = domParentList(ele)
-  var patt = /\d{13}/g;
+  var patt = /\d{13}/g
   if (patt.test(elePath) === true) {
     elePath = elePath.replace(/\d{13}/, '')
   }

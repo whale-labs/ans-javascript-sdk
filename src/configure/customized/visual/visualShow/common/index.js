@@ -30,12 +30,11 @@ function domParentList (ele) {
   return list.join('<')
 }
 function gGetRect (element) {
+  var rect = element.getBoundingClientRect()
 
-  var rect = element.getBoundingClientRect();
+  var top = document.documentElement.clientTop
 
-  var top = document.documentElement.clientTop;
-
-  var left = document.documentElement.clientLeft;
+  var left = document.documentElement.clientLeft
 
   return {
 
@@ -48,7 +47,6 @@ function gGetRect (element) {
     right: rect.right - left
 
   }
-
 }
 function cssContrast (clickPathList, eventPathList) {
   for (var i = 0; i < clickPathList.length; i++) {
@@ -152,7 +150,7 @@ function parserDom (path) {
   var eleList = []
   if (path.indexOf('<') < 0) {
     return [{
-      elePath: path,
+      elePath: path
     }]
   }
   var pathObj = path.split('<')
@@ -365,7 +363,6 @@ function pipParam (param, str) {
 }
 
 function setIndex (ele, link) {
-
   // var link = domParentList(ele)
   var eleObj = parserDom(link)
   if (eleObj.length === 0) {

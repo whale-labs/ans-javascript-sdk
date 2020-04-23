@@ -129,7 +129,7 @@ function setDebugHover (event) {
 var mouseMoveEle = null
 var elePosition = null
 var elePath = null
-var patt = /\d{13}/g;
+var patt = /\d{13}/g
 function callbackMouseMove () {
   elePosition = boxPosition(mouseMoveEle, 'debug')
   if (patt.test(elePath) === true) {
@@ -138,22 +138,22 @@ function callbackMouseMove () {
   sendDebugMsg(mouseMoveEle)
 }
 function offset (curEle) {
-  var totalLeft = null, totalTop = null, par = curEle.offsetParent;
-  //首先加自己本身的左偏移和上偏移
-  totalLeft += curEle.offsetLeft;
+  var totalLeft = null; var totalTop = null; var par = curEle.offsetParent
+  // 首先加自己本身的左偏移和上偏移
+  totalLeft += curEle.offsetLeft
   totalTop += curEle.offsetTop
-  //只要没有找到body，我们就把父级参照物的边框和偏移也进行累加
+  // 只要没有找到body，我们就把父级参照物的边框和偏移也进行累加
   while (par) {
-    if (navigator.userAgent.indexOf("MSIE 8.0") === -1) {
-      //累加父级参照物的边框
-      totalLeft += par.clientLeft;
+    if (navigator.userAgent.indexOf('MSIE 8.0') === -1) {
+      // 累加父级参照物的边框
+      totalLeft += par.clientLeft
       totalTop += par.clientTop
     }
 
-    //累加父级参照物本身的偏移
-    totalLeft += par.offsetLeft;
+    // 累加父级参照物本身的偏移
+    totalLeft += par.offsetLeft
     totalTop += par.offsetTop
-    par = par.offsetParent;
+    par = par.offsetParent
   }
 
   return {

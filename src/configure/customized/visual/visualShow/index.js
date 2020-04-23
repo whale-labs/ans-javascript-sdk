@@ -58,7 +58,6 @@ function processMsg (msg) {
         setTimeout(function () {
           processMsg(msg)
         }, 1000)
-        return
       } else {
         showVisualEvent(eventList)
       }
